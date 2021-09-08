@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Leaflet } from 'src/app/models/Leaflet';
+import { Order } from 'src/app/models/order';
 import { LeafletService } from 'src/app/services/leaflet.service';
 import { OrderService } from 'src/app/services/orders.service';
 
@@ -16,9 +17,11 @@ export class LeafletdetailComponent implements OnInit {
   constructor(private leafletService:LeafletService, private toastrService:ToastrService,private orderService:OrderService,private activatedRoute:ActivatedRoute ,private formBuilder:FormBuilder ) { }
   addOrderForm:FormGroup;
   leaflets:Leaflet[]=[];
+  check:boolean=true;
 
   ngOnInit(): void {
   this.dosomething();
+  this.getOrders();
   }
   
 
@@ -61,12 +64,32 @@ export class LeafletdetailComponent implements OnInit {
     })
 
     
+    if(this.check){
+      let orderModel=Object.assign({},this.addOrderForm.value);
+      this.orderService.add(orderModel).subscribe(response =>{
+        this.toastrService.success(response.message,"Sepete Eklendi.")
+      })
+    }    
+    window.location.reload();
+  }
 
-    let orderModel=Object.assign({},this.addOrderForm.value);
-    this.orderService.add(orderModel).subscribe(response =>{
-      this.toastrService.success(response.message,"Sepete Eklendi.")
+  
+
+  getOrders(){
+    let userId = +localStorage.getItem("userId");
+    this.orderService.getOrdersByUserId(userId).subscribe(response=>{
+      this.checkOrders(response.data);
+
     })
-    
+  }
+
+  checkOrders(orders:Order[]){
+    for(let i=0;orders.length>i;i++){
+      if(orders[i].leafletId==this.leaflets[0].leafletId){
+        this.check =false;
+        this.toastrService.error("Ürün Sepette ekli!")
+      }
+    }
   }
 
 }

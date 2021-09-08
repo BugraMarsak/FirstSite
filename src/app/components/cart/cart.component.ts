@@ -28,7 +28,6 @@ export class CartComponent implements OnInit {
     let userId = +localStorage.getItem("userId")
     this.orderService.getOrdersByUserId(userId).subscribe(response=>{
       this.orders = response.data;
-      console.log(response.data.length)
       if (response.data.length>=1){
         this.dataLoad =false
       }else{
@@ -140,7 +139,8 @@ export class CartComponent implements OnInit {
         this.orderDeleteHelper(order);
       }
       console.log(this.leaflet[0])
-    });   
+    }); 
+    window.location.reload(); 
   }
 
   orderDeleteHelper(order:Order){

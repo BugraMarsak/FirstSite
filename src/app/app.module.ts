@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations"
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
 
 
@@ -28,6 +28,7 @@ import { CartComponent } from './components/cart/cart.component';
 import { ArticleComponent } from './components/article/article.component';
 import { LeafletdetailComponent } from './components/leafletdetail/leafletdetail.component';
 import { InsidearticleComponent } from './components/insidearticle/insidearticle.component';
+import { AuthInterceptor } from './interceptors/auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -61,7 +62,7 @@ import { InsidearticleComponent } from './components/insidearticle/insidearticle
       positionClass:"toast-bottom-right"
     })
   ],
-  providers: [],
+  providers: [{provide:HTTP_INTERCEPTORS, useClass:AuthInterceptor, multi:true}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -9,14 +9,15 @@ import { LeafletdetailComponent } from './components/leafletdetail/leafletdetail
 import { LoginComponent } from './components/login/login.component';
 import { MainComponent } from './components/main/main.component';
 import { RegisterComponent } from './components/register/register.component';
+import { LoginGuard } from './guards/login.guard';
 
 const routes: Routes = [
   {path:"",pathMatch:"full",component:MainComponent},
   {path:"ilanlar",component:LeafletComponent},
-  {path:"ilanlar/ekle",component:AddLeafletComponent},
+  {path:"ilanlar/ekle",component:AddLeafletComponent, canActivate:[LoginGuard]},
   {path:"login",component:LoginComponent},
   {path:"register",component:RegisterComponent},
-  {path:"sepet",component:CartComponent},
+  {path:"sepet",component:CartComponent, canActivate:[LoginGuard]},
   {path:"ilanlar/ilan/:leafletId",component:LeafletdetailComponent },
   {path:"decklist",component:ArticleComponent},
   {path:"decklist/:articleId",component:InsidearticleComponent},
