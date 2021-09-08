@@ -1,0 +1,35 @@
+
+
+  <div class="row forbackground pb-4">
+      <div class="col-lg-3   ">
+        <a id="logo" href="http://localhost:4200/" class="logo ms-3" title="Yugicard"> <img style="width: 100px;height:100%;margin-bottom:8px" src="../../../assets/images/ygo-logo-with-copyright-600x279.png" alt="Yugicard"> </a>
+      </div>
+      <div class="col-lg-4  col-xs4 ">
+          <div class="row">
+            <div class="col-lg-6 pt-3">
+              <a  class="btn rounded-pill" href="http://localhost:4200/decklist"><img class="me-2" id="footer-links" src="../../../assets/images/playing-cards.png">Decklists</a>
+              
+            </div>
+            <div class="col-lg-6 pt-3">
+              <a  class="btn  rounded-pill" href="http://localhost:4200/ilanlar"><img class="me-2" id="footer-links" src="../../../assets/images/leaflet.png">İlanlar</a>
+            </div>
+          </div>
+
+
+      </div>
+      <div class="col-lg-5  ">
+        <div class="row">
+          <div class="col-lg-6  pt-3">
+            <a  class="btn rounded-pill" href="http://localhost:4200/sepet"><img class="me-2" id="footer-links" src="../../../assets/images/shopping-cart.png" alt="">sepet</a>
+          </div>
+          <div *ngIf="checkUserId()" class="col-lg-6 pt-3">
+            <a  class="btn  rounded-pill" href="http://localhost:4200/login"><img class="me-2" id="footer-links" src="../../../assets/images/profile-user.png" alt="">Login</a>
+          </div>
+          <div *ngIf="!checkUserId()"  class="col-lg-6 pt-3">
+            <a  class="btn  rounded-pill" href=""><img class="me-2" id="footer-links" src="../../../assets/images/profile-user.png" alt="">Hoşgeldiniz</a>
+          </div>
+        </div>
+      </div>
+     
+    </div>
+

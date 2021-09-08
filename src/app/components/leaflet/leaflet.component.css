@@ -1,0 +1,28 @@
+.row{
+    
+    background-color: #F1CA89 ;
+}
+
+.forborder{
+ padding-bottom: 0.1rem;
+ 
+}
+
+.forbackground{
+    background-color: #F1CA89 ;
+    text-align: center;
+}
+
+.forsomething{
+
+    background-color: #F1CA89 ;
+    border-top:0.3rem solid #F2DAC3;
+
+}
+
+.card{
+    border: 0px;
+}
+.btn{
+    background-color: #C8C2BC;
+}

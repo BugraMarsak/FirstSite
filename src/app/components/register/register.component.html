@@ -1,0 +1,29 @@
+<div class=" row forbackground">
+  <form form [formGroup]="registerForm">
+
+    <div class="form-group pl mt-2">
+      <label class="test"  for="exampleInputPassword1">İsim</label>
+      <input formControlName="firstName" type="text" class="form-control" id="exampleInputname">
+    </div>
+    <div class="form-group pl mt-2">
+      <label class="test"  for="exampleInputPassword1">Soyadı</label>
+      <input formControlName="lastName" type="text" class="form-control" id="exampleInputlastname">
+    </div>
+
+    <div class="form-group pl mt-2">
+      <label class="test" for="exampleInputEmail1">Mail adresi</label>
+      <input formControlName="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    </div>
+    <div class="form-group pl mt-2">
+      <label class="test"  for="exampleInputPassword1">Şifre</label>
+      <input formControlName="password" type="password" class="form-control" id="exampleInputPassword1">
+    </div>
+
+    
+
+    <div class="d-grid gap-2 pl mt-2">
+        <button type="submit" (click)="register()" class="btn btn-secondary btn-lg btn-block rounded-pill">Submit</button>
+    </div>
+    
+  </form>
+</div>

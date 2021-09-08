@@ -1,0 +1,13 @@
+.pl{
+    padding-top: 0.4rem;
+    padding-bottom: 0.4rem;
+    padding-left: 8rem;
+    padding-right: 8rem;
+}
+.forbackground{
+    background-color: #F1CA89 ;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    text-align: center;
+    font-size: 1.5rem;    
+}

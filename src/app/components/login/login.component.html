@@ -1,0 +1,37 @@
+<div class="row ">
+    <div class="col-lg-1"></div>
+    <div class="col-lg-5 mt-4">
+        <h2>Üye Girişi</h2>
+        <form form [formGroup]="loginForm">
+            <div class="form-group col-lg-10 mt-2">
+              <label class="test" for="exampleInputEmail1">Email address</label>
+              <input formControlName="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            </div>
+            <div class="form-group col-lg-10 mt-2">
+              <label class="test"  for="exampleInputPassword1">Password</label>
+              <input formControlName="password" type="password" class="form-control" id="exampleInputPassword1">
+            </div>
+            <div class="form-group form-check col-lg-10 mt-2">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1">
+              <label  class="form-check-label" for="exampleCheck1">Check me out</label>
+            </div>
+            <div class="d-grid gap-2 col-lg-10 mt-2">
+                <button type="submit" (click)="login()" class="btn btn-secondary btn-lg btn-block rounded-pill">Submit</button>
+            </div>
+            
+        </form>
+    </div>
+    <div class="col-lg-1"></div>
+    <div class="col-lg-4 mt-4">
+       <h2 class="d-none d-sm-block">Henüz üye değil misiniz?</h2>
+       <p class="hidden-sm d-none d-sm-block">
+        Lorem rra ipsum nunc aliquet bibendum enim. Fames ac turpis egestas maecenas pharetra convallis. Lobortis scelerisque fermentum dui faucibus in ornare quam viverra. 
+       </p>
+       <div class="d-grid gap-2">
+        <a class="btn btn-secondary btn-lg btn-block rounded-pill" href="http://localhost:4200/register">Üye ol</a>
+       </div>
+       
+    </div>
+    <div class="col-lg-1"></div>
+</div>
+

@@ -1,0 +1,44 @@
+
+    <div class="row forbackground">
+        <div class="col-lg-2"></div>
+        <div class="col-lg-8" *ngFor="let leaflet of leaflets">
+            <h1 class="paddingthing">{{leaflet.cardName}}</h1>
+            <div class="row">
+                <div class="row" *ngIf="checkPoints(leaflet.cardTypeName)">
+                    <div class="col-lg-3 paddingthing"></div>
+                    <h5 class="col-lg-2 paddingthing">{{leaflet.cardTypeName}}</h5>
+                    <h5 class="col-lg-2 paddingthing" >{{leaflet.attribute}}</h5>
+                    <h5 class="col-lg-2 paddingthing">{{leaflet.race}}</h5>
+                    <div class="col-lg-3 paddingthing"></div>
+
+                    <div class="col-lg-3 paddingthing"></div>
+                    <h5 class="col-lg-2 paddingthing">ATK:{{leaflet.attackPoint}} </h5>
+                    <h5 class="col-lg-2 paddingthing" >DEF:{{leaflet.defensePoint}}</h5>
+                    <h5 class="col-lg-2 paddingthing"><img class="me-2" id="forstar" src="../../../assets/images/768px-Starball_Red.svg.png" alt="star">{{leaflet.level}}</h5>
+                    <div class="col-lg-3 paddingthing"></div>
+
+                    <div class="col-lg-3 paddingthing"></div>
+                    <h5 class="col-lg-2 paddingthing">Fiyat:{{leaflet.unitPrice}} </h5>
+                    <h5 class="col-lg-2 paddingthing" >Stok adedi:{{leaflet.unitInStock}}</h5>
+                    <h5 class="col-lg-2 paddingthing">kart Limiti:{{leaflet.limit}}</h5>
+                    <div class="col-lg-3 paddingthing"></div>
+                </div>
+
+                <div class="row" *ngIf="!checkPoints(leaflet.cardTypeName)">
+                    <h5 class=" paddingthing">{{leaflet.cardTypeName}}</h5>
+                    
+                    <div class="col-lg-3 paddingthing"></div>
+                    <h5 class="col-lg-2 paddingthing">Fiyat:{{leaflet.unitPrice}} </h5>
+                    <h5 class="col-lg-2 paddingthing" >Stok adedi:{{leaflet.unitInStock}}</h5>
+                    <h5 class="col-lg-2 paddingthing">kart Limiti:{{leaflet.limit}}</h5>
+                    <div class="col-lg-3 paddingthing"></div>
+                </div>
+            </div>
+            <div class="pt-5">
+                <a class="btn btn-secondary btn-lg btn-block rounded-pill" (click)="createAddForm(leaflet)" href="http://localhost:4200/sepet">Sepete ekle</a>
+            </div>
+                
+        </div>
+        <div class="col-lg-2"></div>
+    </div>
+

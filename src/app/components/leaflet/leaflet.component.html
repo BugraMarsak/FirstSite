@@ -1,0 +1,51 @@
+<div *ngIf="!checkdiv">
+  <div class="row forborder pt-4">
+
+    <div class="col-lg-2 col-md-2">
+      <input type="text" [(ngModel)]="filterText" class="form-control" id="filterText" placeholder="Enter a card name."><!--[(ngModel)]="filterText" sayesinde filterTextleri bağlıyoruz-->
+    </div>
+
+    <div class="col-lg-2 col-md-2 ">
+      <select class="form-select" [(ngModel)]="cardTypeFilter" name="cardTypeFilter">
+        <option selected></option>
+        <option   *ngFor= "let cardType of cardTypes" >{{cardType.cardTypeName}}</option>
+      </select> 
+    </div>
+    <div class="col-lg-2 col-md-2 ">
+      <select class="form-select" [(ngModel)]="elementFilter" name="elementFilter" >
+        <option selected></option>
+        <option  *ngFor= "let element of elements" >{{element.elementName}}</option>
+      </select> 
+    </div>
+    <div class="col-lg-2 col-md-2 ">
+      <select class="form-select" [(ngModel)]="raceFilter" name="raceFilter">
+        <option selected></option>
+        <option   *ngFor= "let race of races"  >{{race.raceName}}</option>
+      </select> 
+    </div>
+    <div class="col-lg-2">
+      <a class="btn btn-secondary btn-lg btn-block rounded-pill" href="http://localhost:4200/ilanlar/ekle" >İlan ekle</a>
+    </div>
+    
+  </div>
+
+
+    
+  <div class="row pt-4">
+    <div class="card forbackground  pt-2" >
+        <div class="card-body forsomething" *ngFor="let leaflet of leaflets | filterPipe:filterText | cardtypefilter:cardTypeFilter | racefilter:raceFilter | elementfilter:elementFilter">
+          <h4 class="card-title">{{leaflet.cardName}}</h4>
+          <h5 class="card-text">{{leaflet.cardTypeName}}</h5>
+          <h5 *ngIf="checkNone(leaflet.race)">{{leaflet.race}}  -  {{leaflet.attribute}}</h5>
+          <h5>Unit Price:{{leaflet.unitPrice}}$  -  unit In Stock:{{leaflet.unitPrice}}</h5>
+          <a class="btn btn-secondary btn-lg btn-block rounded-pill" routerLink = "/ilanlar/ilan/{{leaflet.leafletId}}" >Get Details</a>
+        </div>
+      </div>
+  </div>
+</div>
+
+<div *ngIf="checkdiv">
+  <div>
+    asdas
+  </div>
+</div>

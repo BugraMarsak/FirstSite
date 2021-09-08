@@ -1,0 +1,15 @@
+.form-control{
+    height: 50px;
+}
+.row{
+    padding: 4rem;
+    padding-bottom: 8rem;
+    padding-top: 8rem;
+    background-color: #F1CA89 ;
+}
+.test{
+    font-size: 1.5rem;
+}
+.btn{
+    background-color: #C8C2BC;
+}

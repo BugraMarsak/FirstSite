@@ -1,0 +1,54 @@
+<div class="row">
+  <div class="col-lg-1"></div>
+  <div class="col-lg-10">
+    <div class="card">
+      <div class="card-header">
+          <h5 class="title">ürün ekle</h5>
+      </div>
+      <div class="card-body">
+        <div class="mb-3">
+          <label for="categoryId">Kart adı</label>
+          
+            <!-- <select class="form-select" [(ngModel)]="cardFilter" name="cardFilter" >
+              <option selected></option>
+              <option  *ngFor= "let card of cards" >{{card.cardName}}</option>
+            </select>  -->
+           <select class="form-select"  [(ngModel)]="cardFilter" >
+              <option selected></option>
+              <option  *ngFor="let card of cards" [ngValue]="card.cardId" >{{card.cardName}}</option>
+            </select>
+          
+        </div>
+
+          <form [formGroup]="addForm" action="">
+                                  
+            
+
+            <div class="mb-3">
+                  <label for="categoryId">Bölge</label>
+                  <div class="form-group">
+                      <input type="string" id="categoryId" formControlName="region" class="form-control" placeholder="Bölge"/> <!--form bağdaştırmayı formControlName den yapıyor-->
+                  </div>
+            </div>
+
+              <div class="mb-3">
+                  <label for="unitInStock">Stok adedi</label>
+                  <div class="form-group">
+                  <input type="number" id="unitsInStock" formControlName="unitInStock" class="form-control" placeholder="Stok adedi"/> <!--form bağdaştırmayı formControlName den yapıyor-->
+                  </div>
+              </div>
+              
+              <div class="mb-3">
+                  <label for="unitPrice">Birim fiyatı</label>
+                  <div class="form-group">
+                      <input type="number" id="unitPrice" formControlName="unitPrice" class="form-control" placeholder="fiyatı" ><!--form bağdaştırmayı formControlName den yapıyor-->
+                  </div> 
+              </div>
+          </form>
+      </div>
+      <div class="card-footer">
+          <button class="btn btn-fill btn-primary" (click)="add()">Ekle</button>
+      </div>
+  </div>
+  </div>
+</div>

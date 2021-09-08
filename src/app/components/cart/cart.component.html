@@ -1,0 +1,39 @@
+<div class="row forbackground">
+    <div *ngIf="dataLoad" >
+        <h1>Sepette ürün yok</h1>
+        <a class="btn btn-secondary btn-lg btn-block rounded-pill" href="http://localhost:4200/ilanlar">Ürünleri incele</a>
+    </div>
+    <div *ngIf="!dataLoad">
+        <div class="row forborder">
+            <h1 >Sepetim</h1>
+        </div>
+        <div  *ngFor="let order of orders">
+            <div *ngIf="!dataLoad" class="row forpadding">
+                <div class="col-lg-1"></div>
+                <h4 class="col-lg-3">{{order.cardName}}</h4>
+                <h4 class="col-lg-2">{{order.price}}</h4>
+                <div class="col-lg-3">
+                    <span (click)="updateNegativeNumber(order)" class="spanbackground">
+                        -
+                    </span>
+                    <span class="spanmiddlebackground">
+                        {{order.number}}
+                    </span>
+                    <span (click)="updatePositeveNumber(order)" class="spanbackground">
+                        +
+                    </span>
+                </div>
+                <div class="col-lg-2"><h4>{{order.number}}x{{order.price}}$:{{order.number * order.price}}$</h4></div>
+            </div>
+        </div> 
+        <div class="row forpadding">
+            <div class=col-lg-9></div>
+            <div class="col-lg-2"><h3>Toplam:{{totalPrice}}$</h3> </div>
+        </div>
+        <div class="forpadding">
+            <a class="btn btn-secondary btn-lg btn-block rounded-pill" (click)="loopforOrders()">Satın al</a>
+        </div>
+        
+    </div>
+
+</div>
