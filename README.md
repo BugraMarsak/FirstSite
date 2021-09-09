@@ -1,3 +1,26 @@
+#Site component Preview
+Ana Ekran:
+![image](https://user-images.githubusercontent.com/47815793/132675146-14bbe043-2f84-474c-92ac-f23ac6178904.png)
+
+Decklist:
+![image](https://user-images.githubusercontent.com/47815793/132675204-9ba2c55f-c662-4ee3-aafe-92550f91b934.png)
+
+![image](https://user-images.githubusercontent.com/47815793/132675405-d1c1291e-c2ad-4359-9e12-8dad5c705651.png)
+
+
+
+İlan:
+![image](https://user-images.githubusercontent.com/47815793/132674595-03989b8c-77f9-44c8-aab5-92998a6f33b6.png)
+
+![image](https://user-images.githubusercontent.com/47815793/132674643-a8dacfa7-db1b-42d2-a375-3b2a6da43ffc.png)
+
+
+Sepet:
+![image](https://user-images.githubusercontent.com/47815793/132674095-25bbf4b6-ce8f-4144-b594-89c7a4eee61b.png)
+
+![image](https://user-images.githubusercontent.com/47815793/132674232-91e5af1e-d084-45af-9c99-847f84ee0d88.png)
+
+
 # Yugicard
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.1.
