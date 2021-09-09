@@ -30,28 +30,14 @@ export class InsidearticleComponent implements OnInit {
     })
   }
 
-  
-  //ngOnInit(): void {
-  //this.dosomething();
-  //}
-
-//   dosomething(){
-    
-//     this.activatedRoute.params.subscribe(params =>{
-      
-//     this.getByLeafletId(params["articleId"]);
-
-      
-//   })
-
-//  }
-
-
-//   getByLeafletId(leafletId:number){
-//      this.articleService.getByArticleId(leafletId).subscribe(response =>{
-//       console.log(response.data)
-//       this.articles = response.data
-//     } )
-//   }
+  checkDecklist(article:Article):boolean{
+    if(article.decklist==""){
+      console.log(false)
+      return false;
+    }
+    else{
+      return true;
+    }
+  }
 
 }

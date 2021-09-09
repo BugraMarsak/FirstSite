@@ -5,6 +5,7 @@ import { Race } from '../models/race';
 import { ListResponseModel } from '../models/listResponseModel';
 import { Article } from '../models/article';
 import { SingleResponseModel } from '../models/singleResponseModel';
+import { ResponseModel } from '../models/responseModel';
 
 
 
@@ -23,9 +24,15 @@ export class ArticleService {
   }
 
   getByArticleId(articleId:number):Observable<SingleResponseModel<Article>>{
-    console.log("bu articleId"+articleId)
+    
     let newPath=this.apiUrl+"Article/getbyarticleid?articleId="+articleId;
     return this.httpClient.get<SingleResponseModel<Article>>(newPath);
+  }
+
+  
+
+  add(article:Article):Observable<ResponseModel>{
+    return this.httpClient.post<ResponseModel>(this.apiUrl+"article/add",article);
   }
 
 }

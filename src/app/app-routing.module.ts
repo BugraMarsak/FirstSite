@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AddLeafletComponent } from './components/add-leaflet/add-leaflet.component';
+import { AddarticleComponent } from './components/addarticle/addarticle.component';
 import { ArticleComponent } from './components/article/article.component';
 import { CartComponent } from './components/cart/cart.component';
 import { InsidearticleComponent } from './components/insidearticle/insidearticle.component';
@@ -20,6 +21,7 @@ const routes: Routes = [
   {path:"sepet",component:CartComponent, canActivate:[LoginGuard]},
   {path:"ilanlar/ilan/:leafletId",component:LeafletdetailComponent },
   {path:"decklist",component:ArticleComponent},
+  {path:"decklist/ekle",component:AddarticleComponent,canActivate:[LoginGuard]},
   {path:"decklist/:articleId",component:InsidearticleComponent},
   
 ];

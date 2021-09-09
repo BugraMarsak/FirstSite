@@ -29,6 +29,7 @@ import { ArticleComponent } from './components/article/article.component';
 import { LeafletdetailComponent } from './components/leafletdetail/leafletdetail.component';
 import { InsidearticleComponent } from './components/insidearticle/insidearticle.component';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
+import { AddarticleComponent } from './components/addarticle/addarticle.component';
 
 @NgModule({
   declarations: [
@@ -50,6 +51,7 @@ import { AuthInterceptor } from './interceptors/auth.interceptor';
     ArticleComponent,
     LeafletdetailComponent,
     InsidearticleComponent,
+    AddarticleComponent,
   ],
   imports: [
     BrowserModule,

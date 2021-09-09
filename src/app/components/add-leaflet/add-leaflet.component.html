@@ -8,11 +8,6 @@
       <div class="card-body">
         <div class="mb-3">
           <label for="categoryId">Kart adı</label>
-          
-            <!-- <select class="form-select" [(ngModel)]="cardFilter" name="cardFilter" >
-              <option selected></option>
-              <option  *ngFor= "let card of cards" >{{card.cardName}}</option>
-            </select>  -->
            <select class="form-select"  [(ngModel)]="cardFilter" >
               <option selected></option>
               <option  *ngFor="let card of cards" [ngValue]="card.cardId" >{{card.cardName}}</option>
@@ -21,9 +16,6 @@
         </div>
 
           <form [formGroup]="addForm" action="">
-                                  
-            
-
             <div class="mb-3">
                   <label for="categoryId">Bölge</label>
                   <div class="form-group">

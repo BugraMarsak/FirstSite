@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-lg-1"></div>
         <h1 class="col-lg-7">{{article.title}}</h1>
-        <h3 class="col-lg-3">Decklist</h3>
+        <h3 class="col-lg-3" *ngIf="checkDecklist(article)">Decklist</h3>
     </div>
     
     <div class="row">
@@ -10,7 +10,7 @@
         <div class="col-lg-7 forfont">
             {{article.article}}
         </div>
-        <div class="col-lg-3">
+        <div class="col-lg-3 forfont">
             {{article.decklist}}
         </div>
     </div>
