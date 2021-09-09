@@ -1,4 +1,4 @@
-#Site component Preview
+# Site component Preview
 Ana Ekran:
 ![image](https://user-images.githubusercontent.com/47815793/132675146-14bbe043-2f84-474c-92ac-f23ac6178904.png)
 
